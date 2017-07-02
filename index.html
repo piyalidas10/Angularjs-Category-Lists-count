@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html ng-app="catApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Angularjs Category Lists count</title>
+<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Titillium+Web%3A400%2C600%2C700%2C300&#038;subset=latin%2Clatin-ext&#038;ver=4.7.5' type='text/css' media='all' />
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<style>
+body{
+  background-color: #e9e9e9;
+}
+.sidebar {
+    background: #FFF;
+    border: 1px solid #bebebd;
+    margin:50px auto;
+  max-width:500px;
+  padding:0 15px;
+}
+.widget-title-wrapper {
+    background: #e9e9e9;
+    margin: 15px 0;
+    text-align: left;
+    border-left: #de1b1b 2px solid;
+}
+.block-title {
+    background: #fff none repeat scroll 0 0;
+    display: inline-block;
+    margin: 0;
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-family: 'Titillium Web',sans-serif;
+}
+.sidebar ul {
+    list-style: none;
+    margin: 0 5px 20px 5px;
+    padding: 0;
+}
+.sidebar ul li {
+    border-bottom: #F0F0F0 1px solid;
+    padding: 5px 0;
+    display: block;
+}
+.sidebar ul li {
+    color: #000;
+    font-family: 'Titillium Web',sans-serif;
+    font-size: 18px;
+  text-transform:capitialize;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    text-transform: capitalize;
+}
+.sidebar ul li span {
+    font-weight: bold;
+    margin-left: 5px;
+}
+</style>
+</head>
+<body ng-controller="blogCtrl">
+
+
+<div class="sidebar">
+  <div class="widget-title-wrapper">
+    <h3 class="block-title">Categories</h3>
+  </div>
+  <ul>
+    <li ng-repeat="(key, value) in blogposts | groupBy: 'post_category'">{{key}} <span>{{value.length}}</span></li>
+  </ul>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.32/angular.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.4/angular-filter.js'></script>
+<script src='app.js'></script>
+</body>
+</html>
