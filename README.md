@@ -1,7 +1,8 @@
 # Angularjs-Category-Lists-count
 
 You can use groupBy of angular.filter module.
-so you can do something like this:
+
+so you can do something like this: Our ng-repeat receives a combination of (key, values[]) that we can use in our following iterations.
 
 JS
 
